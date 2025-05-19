@@ -34,4 +34,8 @@ public class SimpleEliminationService {
         simpleEliminationRepository.deleteById(id);
     }
 
+    public boolean simpleEliminationExist(Long id) {
+        return simpleEliminationRepository.existsById(id);
+    }
+
 }

@@ -6,7 +6,37 @@
 </head>
 <body>
 
+    <main>
+        <h1>Tournois - Simple Eliminations</h1>
 
+        <table th:if="${!#lists.isEmpty(simpleEliminations)}">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Date de Début</th>
+                    <th>Date de Fin</th>
+                    <th>Statut</th>
+                    <th>hasThirdPlaceMatch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="simpleElimination: ${simpleEliminations}">
+                    <td th:text="${simpleElimination.id}">00</td>
+                    <td th:text="${simpleElimination.nom}">nom</td>
+                    <td th:text="${simpleElimination.date_debut}">JJ/MM/AAAA</td>
+                    <td th:text="${simpleElimination.date_fin}">JJ/MM/AAAA</td>
+                    <td th:text="${simpleElimination.statut}">00</td>
+                    <td th:text="${simpleElimination.hasThirdPlaceMatch}">00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:unless="${!#lists.isEmpty(simpleElimination)}">
+            <p>Aucune info dispo</p>
+        </div>
+
+
+    </main>
 
 </body>
 </html>
